@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+class Solution {
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        int index = m;
+
+        for (int value : nums2) {
+            nums1[index] = value;
+            index++;
+        }
+
+        Arrays.sort(nums1);
+    }
+
+    public static void main(String[] args) {
+
+        int[] first = {1, 2, 3, 0, 0, 0};
+        int[] second = {2, 5, 6};
+
+        Solution obj = new Solution();
+
+        obj.merge(first, 3, second, 3);
+
+        System.out.println(Arrays.toString(first));
+    }
+}
