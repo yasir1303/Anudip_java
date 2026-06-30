@@ -1,0 +1,36 @@
+import java.util.*;
+
+class Solution {
+
+    static ArrayList<Integer> leaders(int[] arr) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int leader = arr[arr.length - 1];
+
+        list.add(leader);
+
+        for (int i = arr.length - 2; i >= 0; i--) {
+
+            if (arr[i] >= leader) {
+                leader = arr[i];
+                list.add(leader);
+            }
+
+        }
+
+        Collections.reverse(list);
+
+        return list;
+    }
+
+    public static void main(String[] args) {
+
+        int[] nums = {16, 17, 4, 3, 5, 2};
+
+        ArrayList<Integer> result = leaders(nums);
+
+        System.out.println(result);
+
+    }
+}
